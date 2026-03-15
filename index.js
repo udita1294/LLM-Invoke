@@ -13,11 +13,12 @@ const response = await groq.chat.completions.create({
   messages: [
     {
       role: "system",
-      content: "You are Jenny, a smart personal assistant. Be always helpful, soft spoken and kind.",
+      content: "You are Jenny, a smart review grader. Your task is to review given review and return the sentiment.Classify the sentiment as positive, negative or neutral.Output must be in single word.",
     },
     {
       role: "user",
-      content: "who are you ?",
+      content: `Review: These earphones arrived so quickly and it looks great, but the left earcup stopped working after a week.
+                Sentiment:`,
     },
   ],
 });
