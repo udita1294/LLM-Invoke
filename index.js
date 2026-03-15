@@ -9,11 +9,15 @@ const groq = new OpenAI({
 });
 
 const response = await groq.chat.completions.create({
-  model: "llama-3.3-70b-versatile",
+  model: "llama-3.1-8b-instant",
   messages: [
     {
+      role: "system",
+      content: "You are Jenny, a smart personal assistant. Be always helpful, soft spoken and kind.",
+    },
+    {
       role: "user",
-      content: "Hi!",
+      content: "who are you ?",
     },
   ],
 });
